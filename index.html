@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#087f8c">
+  <meta name="description" content="The Rhyming Beach: a playful, teacher-guided EFL storybook adventure for young learners.">
+  <title>The Rhyming Beach — A Dog on a Log Adventure</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="The Rhyming Beach home"><span class="brand-mark">☀</span><span>The Rhyming Beach<small>A Dog on a Log Adventure</small></span></a>
+  <nav aria-label="Main navigation" class="main-nav">
+    <a href="#story">Meet the story</a><a href="#detective">Rhyme detective</a><a href="#builder">Build a sentence</a><a href="#create">Make a scene</a><a href="#challenge">Final challenge</a><a class="teacher-link" href="#teacher">Teacher corner</a>
+  </nav>
+  <button id="soundToggle" class="sound-toggle" type="button" aria-pressed="false" title="Toggle optional speech">🔈 Sound off</button>
+</header>
+
+<main>
+<section id="home" class="hero section-shell">
+  <div class="hero-copy">
+    <p class="eyebrow">A beach full of silly sounds 🌊</p>
+    <h1>The <span>Rhyming</span><br>Beach!</h1>
+    <p class="hero-subtitle">A Dog on a Log Adventure</p>
+    <p class="lead">Hello, little explorer! Let's read, rhyme, and play!</p>
+    <label class="name-label" for="nickname">Explorer name <span>(optional)</span></label>
+    <div class="name-row"><input id="nickname" maxlength="18" placeholder="Choose a nickname" autocomplete="off"><button id="startBtn" class="button button-coral">Let's Play! <span aria-hidden="true">→</span></button></div>
+    <p class="tiny-note">No account needed. Your name stays on this page.</p>
+    <div class="hero-stats"><span>🐚 <b id="shellCount">0</b> shells found</span><span>🗺️ <b id="progressText">0%</b> adventure complete</span></div>
+  </div>
+  <div class="hero-art hero-image" role="img" aria-label="A happy cartoon dog standing on a log in a sunny green forest, with the title Dog on a Log and a play sign">
+    <img src="assets/dog-on-log-cover.jpg" alt="Dog on a Log: a cheerful puppy standing on a log, with a Play sign" fetchpriority="high">
+  </div>
+  <div class="map-card">
+    <div class="map-title"><span>YOUR BEACH MAP</span><span class="map-hint">Explore at your own pace</span></div>
+    <div class="map-path">
+      <a href="#story" class="map-stop" data-stage="story"><span>📖</span><b>Story Cove</b><small>Meet the characters</small></a>
+      <span class="map-dots">•••</span>
+      <a href="#detective" class="map-stop" data-stage="detective"><span>🔎</span><b>Rhyme Rock</b><small>Listen for sounds</small></a>
+      <span class="map-dots">•••</span>
+      <a href="#builder" class="map-stop" data-stage="builder"><span>🪵</span><b>Sentence Pier</b><small>Build it together</small></a>
+      <span class="map-dots">•••</span>
+      <a href="#create" class="map-stop" data-stage="create"><span>🎭</span><b>Make-believe Bay</b><small>Act it out!</small></a>
+    </div>
+  </div>
+</section>
+
+<div class="progress-wrap" aria-label="Adventure progress"><div class="progress-meta"><span>Beach adventure progress</span><span id="progressLabel">0 of 5 learning stops</span></div><div class="progress-track"><div id="progressBar" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div></div>
+
+<section id="story" class="content-section section-shell">
+  <div class="section-heading"><div><p class="eyebrow">Stop 1 · Story Cove</p><h2>Meet the story!</h2><p>Look closely. What do you notice?</p></div><span class="section-sticker">📚</span></div>
+  <div class="storybook-panel">
+    <div class="storybook-scene story-image"><img src="assets/meet-the-story-beach.jpg" alt="A boy and a hog watch a dog on a log in the sea while tiny fleas pull a rope near a little sailboat" loading="lazy"></div>
+    <div class="storybook-intro"><span class="pill">A story by T. Albert</span><h3>A funny beach mystery</h3><p>A boy and a hog spot a dog on a log. A tiny family of fleas has a surprising plan involving a rope and a boat. What might happen next?</p><p class="copyright-note">This is an original summary, not the book's text or artwork.</p>
+      <div class="prediction-box"><h4>🔮 Make a prediction</h4><p>Who do you see?</p><div class="choice-row" data-prediction="who"><button class="choice">🐕 A dog</button><button class="choice">🐸 A frog</button><button class="choice">🐗 A hog</button></div><p>Where are they?</p><div class="choice-row" data-prediction="where"><button class="choice">🏖️ At the beach</button><button class="choice">🏫 At school</button></div><p id="predictionFeedback" class="feedback" aria-live="polite">Choose an answer. You can also point to the picture!</p></div>
+    </div>
+  </div>
+  <h3 class="subheading">Meet the characters and words</h3>
+  <div class="vocab-grid">
+    <button class="vocab-card" data-word="log" data-say="log"><span>🪵</span><b>log</b><small>A piece of a tree</small></button>
+    <button class="vocab-card" data-word="hog" data-say="hog"><span>🐗</span><b>hog</b><small>A kind of pig</small></button>
+    <button class="vocab-card" data-word="flea" data-say="flea"><span>🐜</span><b>flea</b><small>A tiny jumping insect</small></button>
+    <button class="vocab-card" data-word="boat" data-say="boat"><span>⛵</span><b>boat</b><small>It floats on water</small></button>
+    <button class="vocab-card" data-word="row" data-say="row"><span>🚣</span><b>row</b><small>Move a boat with oars</small></button>
+    <button class="vocab-card" data-word="tree" data-say="tree"><span>🌳</span><b>tree</b><small>A tall plant</small></button>
+    <button class="vocab-card" data-word="beach" data-say="beach"><span>🏖️</span><b>beach</b><small>Sand beside the sea</small></button>
+    <button class="vocab-card" data-word="rope" data-say="rope"><span>🪢</span><b>rope</b><small>A strong, thick cord</small></button>
+    <button class="vocab-card" data-word="perplexed" data-say="perplexed"><span>🤔</span><b>perplexed</b><small>Very confused</small><em>ES: confundido/a</em></button>
+    <button class="vocab-card" data-word="scent" data-say="scent"><span>👃</span><b>scent</b><small>A smell</small><em>ES: olor</em></button>
+  </div>
+  <div class="resource-note"><span>📘</span><div><b>Read the original book with your teacher</b><p>Open the authorized version selected by your teacher. The website does not reproduce the book.</p><a class="button button-outline" href="https://www.monkeypen.com/pages/free-childrens-books" target="_blank" rel="noopener noreferrer">Find the publisher's free books ↗</a></div></div>
+  <div class="section-footer"><button class="button button-teal complete-btn" data-complete="story">I explored the story! <span>🐚</span></button></div>
+</section>
+
+<section id="detective" class="content-section section-shell section-tint">
+  <div class="section-heading"><div><p class="eyebrow">Stop 2 · Rhyme Rock</p><h2>Rhyme detective</h2><p>Rhymes have the same ending sound. Listen, say, and match!</p></div><span class="section-sticker">🔎</span></div>
+  <div class="activity-card">
+    <div class="activity-title"><span class="activity-number">1</span><div><h3>Find the rhyme</h3><p>Choose two words that rhyme with <b>dog</b>.</p></div></div>
+    <div class="word-card-grid" id="rhymeChoices">
+      <button class="word-card" data-word="dog"><span>🐕</span><b>dog</b></button><button class="word-card" data-word="log"><span>🪵</span><b>log</b></button><button class="word-card" data-word="hog"><span>🐗</span><b>hog</b></button><button class="word-card" data-word="tree"><span>🌳</span><b>tree</b></button><button class="word-card" data-word="flea"><span>🐜</span><b>flea</b></button><button class="word-card" data-word="me"><span>🙋</span><b>me</b></button>
+    </div><p class="helper">Tap <b>log</b> and <b>hog</b>. Then press Check.</p><div class="action-row"><button class="button button-outline" id="speakDog">🔊 Hear “dog”</button><button class="button button-teal" id="checkRhyme">Check my rhymes</button><button class="button button-quiet" id="resetRhyme">Start again</button></div><p id="rhymeFeedback" class="feedback" aria-live="polite">Ready, detective?</p>
+  </div>
+  <div class="activity-card">
+    <div class="activity-title"><span class="activity-number">2</span><div><h3>The -og word family</h3><p>Find every word that rhymes with dog.</p></div></div>
+    <div id="ogChoices" class="word-card-grid compact">
+      <button class="word-card" data-og="dog"><span>🐕</span><b>dog</b></button><button class="word-card" data-og="log"><span>🪵</span><b>log</b></button><button class="word-card" data-og="hog"><span>🐗</span><b>hog</b></button><button class="word-card" data-og="cat"><span>🐈</span><b>cat</b></button><button class="word-card" data-og="tree"><span>🌳</span><b>tree</b></button><button class="word-card" data-og="flea"><span>🐜</span><b>flea</b></button>
+    </div><p id="ogFeedback" class="feedback" aria-live="polite">Select dog, log, and hog. Then check.</p><div class="action-row"><button id="checkOg" class="button button-teal">Check words</button><button id="resetOg" class="button button-quiet">Start again</button></div>
+  </div>
+  <div class="activity-card">
+    <div class="activity-title"><span class="activity-number">3</span><div><h3>Listen and choose</h3><p>Listen to the word, then tap the matching picture.</p></div></div>
+    <div class="listen-row"><button class="button button-coral" id="playListen">🔊 Hear the word</button><span id="listenPrompt" class="listen-prompt">Ready to listen?</span></div>
+    <div id="listenChoices" class="choice-row big-choices"><button class="choice" data-listen="log">🪵 log</button><button class="choice" data-listen="cat">🐈 cat</button><button class="choice" data-listen="hog">🐗 hog</button></div><p id="listenFeedback" class="feedback" aria-live="polite">Press “Hear the word” to begin.</p>
+  </div>
+  <div class="activity-card">
+    <div class="activity-title"><span class="activity-number">4</span><div><h3>Build the story skeleton</h3><p>Put the story events in order. Use the arrows—no dragging needed.</p></div></div>
+    <div id="sequenceList" class="sequence-list">
+      <article class="sequence-item" data-event="surprise"><span class="sequence-icon">🚣</span><div><b>Surprise</b><p>The fleas use a rope and boat to find a new home.</p></div><div class="sequence-controls"><button aria-label="Move Surprise up" data-move="-1">↑</button><button aria-label="Move Surprise down" data-move="1">↓</button></div></article>
+      <article class="sequence-item" data-event="setting"><span class="sequence-icon">🏖️</span><div><b>Setting</b><p>The beach, the tree, and the sea.</p></div><div class="sequence-controls"><button aria-label="Move Setting up" data-move="-1">↑</button><button aria-label="Move Setting down" data-move="1">↓</button></div></article>
+      <article class="sequence-item" data-event="ending"><span class="sequence-icon">👃</span><div><b>Ending</b><p>The narrator wonders if he has a flea.</p></div><div class="sequence-controls"><button aria-label="Move Ending up" data-move="-1">↑</button><button aria-label="Move Ending down" data-move="1">↓</button></div></article>
+      <article class="sequence-item" data-event="problem"><span class="sequence-icon">🐕</span><div><b>Problem</b><p>A dog is spotted on a log.</p></div><div class="sequence-controls"><button aria-label="Move Problem up" data-move="-1">↑</button><button aria-label="Move Problem down" data-move="1">↓</button></div></article>
+    </div><div class="action-row"><button id="checkSequence" class="button button-teal">Check my story order</button><button id="resetSequence" class="button button-quiet">Reset order</button></div><p id="sequenceFeedback" class="feedback" aria-live="polite">Start with the setting: where does the story happen?</p>
+  </div>
+  <div class="section-footer"><button class="button button-teal complete-btn" data-complete="detective">I solved the rhyme clues! <span>⭐</span></button></div>
+</section>
+
+<section id="builder" class="content-section section-shell">
+  <div class="section-heading"><div><p class="eyebrow">Stop 3 · Sentence Pier</p><h2>Build a funny sentence</h2><p>Now we make a new sentence together—with teacher help!</p></div><span class="section-sticker">🪵</span></div>
+  <div class="teacher-prompt"><span>👩‍🏫</span><div><b>Teacher-guided mode</b><p>Invite suggestions, model the sounds, and say the sentence together. Children can point, speak, or choose a card.</p></div><label class="switch-label"><input type="checkbox" id="teacherMode"> <span>Show teaching prompts</span></label></div>
+  <div class="builder-layout">
+    <div class="builder-controls">
+      <h3>1. Who is it?</h3><div id="animalOptions" class="select-grid"><button class="select-word selected" data-animal="cat" data-emoji="🐈">🐈 <b>cat</b></button><button class="select-word" data-animal="frog" data-emoji="🐸">🐸 <b>frog</b></button><button class="select-word" data-animal="hen" data-emoji="🐔">🐔 <b>hen</b></button><button class="select-word" data-animal="fox" data-emoji="🦊">🦊 <b>fox</b></button><button class="select-word" data-animal="bug" data-emoji="🐞">🐞 <b>bug</b></button><button class="select-word" data-animal="bat" data-emoji="🦇">🦇 <b>bat</b></button></div>
+      <h3>2. Where is it?</h3><div id="placeOptions" class="select-grid"><button class="select-word selected" data-place="mat" data-emoji="🟫">🟫 <b>mat</b></button><button class="select-word" data-place="log" data-emoji="🪵">🪵 <b>log</b></button><button class="select-word" data-place="pen" data-emoji="✏️">✏️ <b>pen</b></button><button class="select-word" data-place="box" data-emoji="📦">📦 <b>box</b></button><button class="select-word" data-place="rug" data-emoji="🧶">🧶 <b>rug</b></button><button class="select-word" data-place="hat" data-emoji="🎩">🎩 <b>hat</b></button></div>
+    </div>
+    <div class="sentence-display"><span class="pill">YOUR SENTENCE</span><div class="sentence-picture"><span id="builtAnimal">🐈</span><span class="on-word">on</span><span id="builtPlace">🟫</span></div><p id="builtSentence" class="built-sentence" aria-live="polite">There's a cat on a mat!</p><p id="rhymeStatus" class="rhyme-status">✨ Cat and mat rhyme!</p><button id="saySentence" class="button button-coral">🔊 Say the sentence</button><button id="resetBuilder" class="button button-quiet">Reset sentence</button>
+      <div id="teacherPrompts" class="teacher-prompts hidden"><b>Ask the class:</b><ul><li>Who is it?</li><li>Where is it?</li><li>What rhymes with cat?</li><li>Can you say the whole sentence?</li></ul><label for="extension">Optional extension</label><input id="extension" placeholder="Add an adjective, e.g. big"><button id="addExtension" class="button button-outline">Add adjective</button></div>
+    </div>
+  </div>
+  <div class="example-strip"><b>Try these rhyming pairs:</b><button data-pair="cat|mat">cat / mat</button><button data-pair="frog|log">frog / log</button><button data-pair="hen|pen">hen / pen</button><button data-pair="fox|box">fox / box</button><button data-pair="bug|rug">bug / rug</button><button data-pair="bat|hat">bat / hat</button></div>
+  <p class="copyright-note">These are original practice sentences, not quotations from the book. Some playful combinations may not rhyme—listen to the ending sounds!</p>
+  <div class="section-footer"><button class="button button-teal complete-btn" data-complete="builder">We built a sentence together! <span>🐚</span></button></div>
+</section>
+
+<section id="create" class="content-section section-shell section-tint">
+  <div class="section-heading"><div><p class="eyebrow">Stop 4 · Make-believe Bay</p><h2>Create your own rhyming scene</h2><p>Work with a partner or a small group. Then perform for your classmates!</p></div><span class="section-sticker">🎭</span></div>
+  <div class="scene-grid" id="sceneGrid">
+    <button class="scene-card selected" data-scene="hen"><span class="scene-art">🐔<span>✏️</span></span><b>A hen on a pen</b><small>hen · pen</small></button>
+    <button class="scene-card" data-scene="fox"><span class="scene-art">🦊<span>📦</span></span><b>A fox on a box</b><small>fox · box</small></button>
+    <button class="scene-card" data-scene="bug"><span class="scene-art">🐞<span>🧶</span></span><b>A bug on a rug</b><small>bug · rug</small></button>
+    <button class="scene-card" data-scene="bat"><span class="scene-art">🦇<span>🎩</span></span><b>A bat on a hat</b><small>bat · hat</small></button>
+  </div>
+  <div class="creation-workspace">
+    <div class="coloring-panel"><h3>Make it yours!</h3><p>Choose a background color for your scene.</p><div class="color-options" aria-label="Scene background color"><button data-color="#fff1cf" style="background:#fff1cf" aria-label="Cream background"></button><button data-color="#d8f5f1" style="background:#d8f5f1" aria-label="Mint background"></button><button data-color="#ffe0dc" style="background:#ffe0dc" aria-label="Coral background"></button><button data-color="#dce9ff" style="background:#dce9ff" aria-label="Sky blue background"></button></div><div id="coloringCanvas" class="coloring-canvas"><span id="colorAnimal">🐔</span><span id="colorObject">✏️</span><p id="colorCaption">A hen on a pen!</p></div><button id="resetColor" class="button button-quiet">Reset color</button></div>
+    <div class="sentence-strip-panel"><span class="pill">YOUR SENTENCE STRIP</span><h3>Complete the sentence</h3><p class="sentence-strip">There's a <b id="stripAnimal">hen</b> on a <b id="stripObject">pen</b>!</p><button id="sayStrip" class="button button-outline">🔊 Practise saying it</button>
+      <div class="word-bank"><b>Word bank</b><span id="wordBank">hen · pen · chicken · pencil</span></div>
+      <h3>Choose your roles</h3><div class="roles-grid"><label>Narrator<select id="roleNarrator"><option>Partner 1</option><option>Partner 2</option><option>Partner 3</option><option>Teacher</option></select></label><label>Animal<select id="roleAnimal"><option>Partner 2</option><option>Partner 1</option><option>Partner 3</option></select></label><label>Audience helper<select id="roleAudience"><option>Partner 3</option><option>Partner 1</option><option>Partner 2</option></select></label></div>
+    </div>
+  </div>
+  <div class="performance-script"><h3>🎬 Your one-minute mini-performance</h3><div class="script-lines"><p><span>Narrator:</span> “Look! There's a …!”</p><p><span>Classmate:</span> “What happened next?”</p><p><span>Child:</span> “There's a <b id="scriptAnimal">hen</b> on a <b id="scriptObject">pen</b>!”</p></div><h4>Rehearsal checklist</h4><div class="checklist"><label><input type="checkbox"> We can say both rhyming words.</label><label><input type="checkbox"> We know our roles.</label><label><input type="checkbox"> We practised speaking clearly.</label><label><input type="checkbox"> We will take turns and encourage each other.</label></div><p class="important-note">🌟 The performance happens with real voices, gestures, and classmates. The website helps you prepare; it cannot perform for you.</p></div>
+  <div class="section-footer"><button class="button button-teal complete-btn" data-complete="create">Our scene is ready to perform! <span>⭐</span></button></div>
+</section>
+
+<section id="challenge" class="content-section section-shell">
+  <div class="section-heading"><div><p class="eyebrow">Stop 5 · The Shell-Shine Test</p><h2>The final rhyme challenge</h2><p>Take your time. Every try helps your learning!</p></div><span class="section-sticker">🏆</span></div>
+  <div class="quiz-card" id="quizCard">
+    <div class="quiz-progress"><span id="quizStep">Question 1 of 3</span><span>🐚 Keep exploring!</span></div>
+    <div id="quizQuestion" class="quiz-question"><h3>Which pair rhymes?</h3><div class="quiz-options"><button data-answer="dog-log">🐕 dog — 🪵 log</button><button data-answer="dog-cat">🐕 dog — 🐈 cat</button></div></div>
+    <p id="quizFeedback" class="feedback" aria-live="polite">Choose the pair that sounds alike at the end.</p><button id="nextQuestion" class="button button-teal" disabled>Next question →</button>
+  </div>
+  <div class="self-check"><h3>How do you feel about rhymes?</h3><div class="smiley-options"><button data-feeling="not-yet">🙁<span>Not yet</span></button><button data-feeling="support">🙂<span>With help</span></button><button data-feeling="independent">😄<span>I can do it!</span></button></div><p id="feelingFeedback" class="feedback" aria-live="polite"></p></div>
+  <div id="celebration" class="celebration hidden"><div class="badge">🏅</div><p class="eyebrow">Beach adventure complete!</p><h2 id="certificateTitle">You're a Rhyme Explorer!</h2><p id="certificateMessage">You listened, noticed rhymes, and built a funny sentence.</p><div class="reward-stars">⭐ 🐚 ⭐ 🐚 ⭐</div><button id="printCertificate" class="button button-coral">Print my certificate</button><button id="restartAdventure" class="button button-outline">Play again</button></div>
+</section>
+
+<section id="teacher" class="teacher-section">
+  <div class="section-shell">
+    <div class="section-heading"><div><p class="eyebrow">For educators · University project</p><h2>Teacher Corner</h2><p>Pedagogical rationale, evidence, and a practical 55-minute route.</p></div><span class="section-sticker">🧑‍🏫</span></div>
+    <div class="teacher-overview"><h3>Project overview</h3><div class="overview-grid"><p><b>Literary resource</b><br><i>A Dog on a Log</i>, by T. Albert</p><p><b>Target group</b><br>Grade 2 · ages 5–9 · A1–A2</p><p><b>Lesson duration</b><br>55 minutes</p><p><b>Main learning objective</b><br>Recognize and say rhyming pairs and use “There's a ___ on a ___!” with teacher and peer support.</p></div></div>
+    <h3 class="subheading">The Genre-Based Approach in practice</h3><p class="teacher-explainer">The sequence moves from supported noticing of a model text, to co-creating a new text with the teacher, and then to children's own production. The game labels make the route visible, but the learning comes from the teacher's mediation, language choices, oral rehearsal, and observation.</p>
+    <div class="gba-grid">
+      <article><span class="gba-icon">🔎</span><h3>1. Text deconstruction and lexicogrammatical analysis</h3><p><b>Website:</b> Meet the Story + Rhyme Detective.</p><p><b>Children do:</b> predict from pictures, notice word-family sounds, match rhymes, and sequence setting, problem, surprise, and ending.</p><p><b>Evidence:</b> correct matches, oral responses, and a sequenced story skeleton.</p></article>
+      <article><span class="gba-icon">🧩</span><h3>2. Joint construction with teacher scaffolding and mediation</h3><p><b>Website:</b> Build a Funny Sentence.</p><p><b>Children do:</b> suggest an animal and place, listen to the teacher model sounds, and co-construct “There's a ___ on a ___!”</p><p><b>Evidence:</b> a collaboratively built sentence and supported oral production.</p></article>
+      <article><span class="gba-icon">🎭</span><h3>3. Independent construction through role-play / supported communicative task</h3><p><b>Website:</b> Create Your Own Rhyming Scene.</p><p><b>Children do:</b> choose a scene, complete a sentence strip, assign roles, rehearse with gestures, and perform for peers.</p><p><b>Evidence:</b> a written sentence strip and an approximately one-minute group performance.</p></article>
+    </div>
+    <div class="timeline-panel"><h3>55-minute lesson route</h3><div class="timeline">
+      <div><b>5 min</b><span>Warm-up & pre-teaching</span><small>Greeting, known animals, key words, gestures.</small></div>
+      <div><b>10 min</b><span>Read-aloud</span><small>Teacher reads the original book; children predict and join the refrain.</small></div>
+      <div><b>8 min</b><span>Text deconstruction</span><small>Rhyme sorting and story skeleton.</small></div>
+      <div><b>9 min</b><span>Joint construction</span><small>Build and say a new rhyming sentence together.</small></div>
+      <div><b>15 min</b><span>Independent construction</span><small>Scene card, sentence strip, rehearsal, group performance.</small></div>
+      <div><b>5 min</b><span>Closing & peer feedback</span><small>Kind feedback and exit ticket.</small></div>
+    </div><p class="tiny-note">The listed stages total 52 minutes. Use the remaining approximately 3 minutes for transitions.</p></div>
+    <div class="assessment-panel"><div><h3>Teacher observation checklist</h3><p>Use during the lesson. Digital success is practice evidence—not proof of independent pronunciation or language use.</p></div><div class="table-wrap"><table><thead><tr><th>Criteria</th><th>Not yet</th><th>With support</th><th>Independently</th></tr></thead><tbody>
+      <tr><td>Recognizes or says rhyming pairs</td><td><input type="radio" name="c1" aria-label="Rhymes: not yet"></td><td><input type="radio" name="c1" aria-label="Rhymes: with support"></td><td><input type="radio" name="c1" aria-label="Rhymes: independently"></td></tr>
+      <tr><td>Uses “There's a ___ on a ___!”</td><td><input type="radio" name="c2" aria-label="Sentence: not yet"></td><td><input type="radio" name="c2" aria-label="Sentence: with support"></td><td><input type="radio" name="c2" aria-label="Sentence: independently"></td></tr>
+      <tr><td>Participates in group role-play</td><td><input type="radio" name="c3" aria-label="Role-play: not yet"></td><td><input type="radio" name="c3" aria-label="Role-play: with support"></td><td><input type="radio" name="c3" aria-label="Role-play: independently"></td></tr>
+      <tr><td>Takes turns and contributes respectfully</td><td><input type="radio" name="c4" aria-label="Turn-taking: not yet"></td><td><input type="radio" name="c4" aria-label="Turn-taking: with support"></td><td><input type="radio" name="c4" aria-label="Turn-taking: independently"></td></tr>
+      <tr><td>Uses a clear, audible voice when appropriate</td><td><input type="radio" name="c5" aria-label="Voice: not yet"></td><td><input type="radio" name="c5" aria-label="Voice: with support"></td><td><input type="radio" name="c5" aria-label="Voice: independently"></td></tr>
+    </tbody></table></div><button class="button button-outline" onclick="window.print()">Print teacher checklist</button></div>
+    <div class="peer-feedback"><h3>Peer feedback prompts</h3><div class="peer-cards"><p>💬 “Did they say the rhyme?”</p><p>📣 “Was the voice loud and clear?”</p><p>💛 “One thing I liked was…”</p></div><p>Use warm, specific feedback. Immediate, positive correction gives learners a safe chance to notice the sound, try again, and keep participating.</p></div>
+    <div class="teacher-controls"><h3>Classroom controls</h3><label><input type="checkbox" id="unlockAll"> Teacher demo mode: mark all learning stops as explored</label><p class="tiny-note">This changes only the progress display; every activity is available whether or not a stop is completed.</p><button id="resetProgress" class="button button-quiet">Reset adventure progress</button></div>
+    <p class="teacher-caveat">This website is a supporting resource, not a replacement for the teacher, the original storybook, classroom interaction, or the physical group performance. The pedagogical framing follows the project brief's reference to Herazo Rivera (2012); no page-specific quotations are reproduced here.</p>
+  </div>
+</section>
+</main>
+<footer><span>🌊 The Rhyming Beach</span><span>Listen kindly · Try again · Tell a story</span><a href="#home">Back to the beach ↑</a></footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
